@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Arial, sans-serif;
 }
@@ -30,4 +35,13 @@ nav {
 }
 body, nav {
     color: white;                          
+}
+#mobileMenu .dropdown {
+    position: relative;
+}
+
+#mobileMenu .dropdown > div {
+    position: absolute;
+    left: 100%; 
+    top: 0;     
 }
