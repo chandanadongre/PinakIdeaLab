@@ -7,12 +7,14 @@
     <title>Streamline: Sprinklers, Drainage & Landscaping</title>
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="stylesheet" href="style.css">
+    <script defer src="scripts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 
 <body class="bg-gray-100">
         <!-- Top Section -->
-        <div class="bg-green-700 text-white py-0 flex items-center justify-between">
+        <div class="bg-green-700 bg-opacity-100 text-white py-0 px-4 flex items-center justify-between rounded">
             <div class="flex items-center space-x-4 mt-0 ml-20">
                 <span class="flex items-center space-x-1 font-bold text-white">
                     <img src="location.png" alt="Location Icon" class="h-5 w-5" />
@@ -20,15 +22,15 @@
                 </span>            
             </div>
             <div class="flex items-center space-x-2 ml-20 md:ml-20">
-                <img class="w-16 md:w-32 lg:w-48" src="hearthlogo.png" alt="Hearth Logo" class="h-6 w-6">
-                <button class="bg-white text-black px-3 py-1 rounded-full">GET MY RATES</button>
+                <img class="flex items-center w-16 md:w-32 lg:w-48" src="hearthlogo.png" alt="Hearth Logo" class="h-6 w-6">
+                <button class="bg-white text-black px-8 py-1 flex items-center rounded">GET MY RATES</button>
             </div>
         </div>
 
     <!-- navbar Section -->
-    <nav class="bg-gray-900 text-white p-4">
+    <nav class="bg-gray-900 bg-opacity-70 text-white p-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <img class="w-16 md:w-32 lg:w-48" src="logo2.png" alt="Logo" class="logo-image">
+            <img class="w-18 md:w-34 lg:w-48" src="logo2.png" alt="Logo" class="logo-image">
             
             <button onclick="toggleMobileMenu()" class="md:hidden block text-white focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -112,8 +114,8 @@
 
             <div class="relative">
 
-            <a href="#" onclick="toggleDropdown('landscapingDropdownMobile')" class="hover:text-green-500">Landscaping</a>
-                <div id="landscapingDropdownMobile" class="hidden absolute right-0 bg-white text-gray-900 mt-2 rounded shadow-lg">
+            <a href="#" onclick="toggleDropdown('landscapingDropdownMobile')" class="hover:text-green-500 text-black font-medium">Landscaping</a>
+                <div id="landscapingDropdownMobile" class="absolute right-60 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
                     <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscaping Services</a>
                     <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscape Design</a>
                     <a  href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Lawn Care Services</a>
@@ -122,8 +124,8 @@
                 </div>
             </div>
             <div class="relative">
-            <a href="#" onclick="toggleDropdown('drainageDropdownMobile')" class="hover:text-green-500">Drainage</a>
-                <div id="drainageDropdownMobile" class="hidden absolute right-0 bg-white text-gray-900 mt-2 rounded shadow-lg">
+            <a href="#" onclick="toggleDropdown('drainageDropdownMobile')" class="hover:text-green-500 text-black font-medium">Drainage</a>
+                <div id="drainageDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Drain Services</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">French Drain Installation</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Channel Drain Installation</a>
@@ -131,8 +133,8 @@
                 </div>
             </div>
             <div class="relative">
-            <a href="#" onclick="toggleDropdown('sprinklerDropdownMobile')" class="hover:text-green-500">Sprinkler & Irrigation</a>
-            <div id="sprinklerDropdownMobile" class="hidden absolute right-0 bg-white text-gray-900 mt-2 rounded shadow-lg">
+            <a href="#" onclick="toggleDropdown('sprinklerDropdownMobile')" class="hover:text-green-500 text-black font-medium">Sprinkler & Irrigation</a>
+            <div id="sprinklerDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler & Irrigation Services</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler System Installation</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Sprinkler Repair</a>
@@ -141,8 +143,8 @@
             </div>
         </div>
         <div class="relative">
-            <a href="#" onclick="toggleDropdown('aboutDropdownMobile')" class="hover:text-green-500">About</a>
-            <div id="aboutDropdownMobile" class="hidden absolute right-0 bg-white text-gray-900 mt-2 rounded shadow-lg">
+            <a href="#" onclick="toggleDropdown('aboutDropdownMobile')" class="hover:text-green-500 text-black font-medium">About</a>
+            <div id="aboutDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">About</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Project Gallery</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Reviews</a>
@@ -150,8 +152,8 @@
             </div>
         </div>
         <div class="relative">
-            <a href="#" onclick="toggleDropdown('contactDropdownMobile')" class="hover:text-green-500">Contact</a>
-            <div id="contactDropdownMobile" class="hidden absolute right-0 bg-white text-gray-900 mt-2 rounded shadow-lg">
+            <a href="#" onclick="toggleDropdown('contactDropdownMobile')" class="hover:text-green-500 text-black font-medium">Contact</a>
+            <div id="contactDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Contact</a>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Fort Worth Service Area</a>
             </div>
@@ -160,10 +162,51 @@
     <button class="bg-green-700 text-white px-4 py-2 rounded-full font-bold text-white mt-4">
         Call (817)701-8920
     </button>
-
     </div>
     </nav>    
 
+    <section class="built-differently-section">
+        <div class="overlay"></div>
+        
+        <div class="content">
+            <!-- Text Section -->
+            <div class="text-section">
+                <img src="icon.png" alt="Logo Icon" class="logo-icon">
+                <h1 class="title">Built Differently</h1>
+                <hr class="separator">
+                <p class="subtitle"> A <span class="highlight" id="highlight-text">Streamlined</span> Approach To Your <br> Outdoor Needs</p>
+                <button class="cta-button">Schedule An On-Site Assessment</button>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <form class="contact-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" class="form-input">
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Phone" class="form-input">
+                        <input type="email" placeholder="Email" class="form-input">     
+                    </div>
+                    
+                    <input type="text" placeholder="Address" class="form-input">
+                    <select class="form-select">
+                        <option>Yes, I'm a potential new customer</option>
+                        <option>No, I'm an existing customer</option>
+                        <option>Neither</option>
+                    </select>
+                    <select class="form-select">
+                        <option>Sprinklers</option>
+                        <option>Drainage</option>
+                        <option>Landscaping</option>
+                        <option>Hardscaping</option>
+                        <option>Other</option>
+                    </select>
+                    <button type="submit" class="submit-button">Get In Touch Today</button>
+                </form>
+            </div>
+        </div>
+    </section>
     <!-- JavaScript for only for Mobile Menu -->
     <script>
         function toggleDropdown(dropdownId) {
@@ -174,17 +217,41 @@
         const mobileMenu = document.getElementById('mobileMenu');
         mobileMenu.classList.toggle('hidden');
     }
+
     document.addEventListener('click', function(event) {
-        const dropdowns = ['landscapingDropdown', 'drainageDropdown', 'landscapingDropdownMobile', 'drainageDropdownMobile','sprinkleDropdown','aboutDropdown','contactDropdown','sprinklerDropdownMobile','aboutDropdownMobile','contactDropdownMobile'];
+        const dropdowns = [
+            'landscapingDropdownMobile', 'drainageDropdownMobile', 
+            'sprinklerDropdownMobile', 'aboutDropdownMobile', 'contactDropdownMobile'
+        ];
+
         dropdowns.forEach(id => {
             const dropdown = document.getElementById(id);
-            if (dropdown && !dropdown.contains(event.target) && !event.target.closest('button')) {
+            const toggleButton = document.querySelector(`[onclick="toggleDropdown('${id}')"]`);
+
+            if (dropdown && !dropdown.classList.contains('hidden') &&
+                !dropdown.contains(event.target) && event.target !== toggleButton) {
                 dropdown.classList.add('hidden');
             }
         });
     });
-    
-    </script>
+    const words = ['Streamlined', 'Professional', 'Long-Lasting'];
+let index = 0;
+
+function changeText() {
+    const highlight = document.getElementById('highlight-text');
+    highlight.style.opacity = 0;
+
+    setTimeout(() => {
+        highlight.textContent = words[index];
+        highlight.style.opacity = 1;
+        index = (index + 1) % words.length;
+    }, 500); 
+}
+// Change the text every 3 seconds
+setInterval(changeText, 1500);
+
+
+</script>
     
 </body>
 </html>
