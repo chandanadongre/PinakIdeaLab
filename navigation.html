@@ -1,257 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- for responsive design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Streamline: Sprinklers, Drainage & Landscaping</title>
-    <link rel="icon" type="image/png" href="icon.png">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="scripts.js"></script>
+    <link rel="icon" type="image/png" href="./img/icon.png">
+    <link href="./style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-</head>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .cycling-word {
+            transition: opacity 500ms ease-in-out;
+        }
+    </style>
+  </head>
 
-<body class="bg-gray-100">
-        <!-- Top Section -->
-        <div class="bg-green-700 bg-opacity-100 text-white py-0 px-4 flex items-center justify-between rounded">
-            <div class="flex items-center space-x-4 mt-0 ml-20">
-                <span class="flex items-center space-x-1 font-bold text-white">
-                    <img src="location.png" alt="Location Icon" class="h-5 w-5" />
-                <span>6516 Colleyville Blvd, Colleyville, TX 76034</span>
-                </span>            
-            </div>
-            <div class="flex items-center space-x-2 ml-20 md:ml-20">
-                <img class="flex items-center w-16 md:w-32 lg:w-48" src="hearthlogo.png" alt="Hearth Logo" class="h-6 w-6">
-                <button class="bg-white text-black px-8 py-1 flex items-center rounded">GET MY RATES</button>
-            </div>
-        </div>
-
-    <!-- navbar Section -->
-    <nav class="bg-gray-900 bg-opacity-70 text-white p-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <img class="w-18 md:w-34 lg:w-48" src="logo2.png" alt="Logo" class="logo-image">
-            
-            <button onclick="toggleMobileMenu()" class="md:hidden block text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
+  <body class="min-h-screen bg-[url('./img/bg3.png')] bg-cover bg-center bg-fixed bg-no-repeat">
+    <nav class="bg-opacity-90 text-white sticky top-0 z-50">
+      <div class="bg-green-700 bg-opacity-80 text-white py-6 px-6">
+        <div class=" text-white container mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-2 mt-0 ml-20">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>6516 Colleyville Blvd, Colleyville, TX 76034</span>
+          </div>
+          <div class="flex items-center space-x-10">
+            <img src="./img/hearthlogo.png" alt="Logo" class="h-14">
+            <button class="bg-white text-black px-10 py-2 rounded hover:bg-gray-100 transition">
+              GET MY RATES
             </button>
+          </div>
+        </div>
+      </div>
 
-            <!-- Desktop Menu -->
-            <div id="menu" class="hidden md:flex space-x-6 md:items-center w-full md:w-auto">
-                <a href="#" class="hover:text-green-500 text-lg">Home</a>
-                
-                <!-- Dropdown for Landscaping -->
-                <div class="relative group">
-                    <button onclick="toggleDropdown('landscapingDropdown')" class="hover:text-green-500 focus:outline-none text-lg">
-                        Landscaping
-                    </button>
-                    <div id="landscapingDropdown" class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscaping Services</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscape Design</a>
-                        <a  href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Lawn Care Services</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscape Lighting</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Fence Installation</a>
-                    </div>
-                </div>
-                <!-- Dropdown for Drainage -->
-                <div class="relative group">
-                    <button onclick="toggleDropdown('drainageDropdown')" class="hover:text-green-500 focus:outline-none text-lg">
-                        Drainage
-                    </button>
-                    <div id="drainageDropdown" class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Drain Services</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">French Drain Installation</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Channel Drain Installation</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Yard Drainage System</a>
-                    </div>
-                </div>
-                <!-- Dropdown for  Sprinkler & Irrigation -->
-                <div class="relative group">
-                    <button onclick="toggleDropdown('sprinkleDropdown')" class="hover:text-green-500 focus:outline-none text-lg">
-                        Sprinkler & Irrigation
-                    </button>
-                    <div id="sprinkleDropdown" class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler & Irrigation Services</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler System Installation</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Sprinkler Repair</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Commercial Sprinkler Repair</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Drip Irrigation Installation</a>
-                    </div>
-                </div>
-                <!-- Dropdown for About -->
-                <div class="relative group">
-                    <button onclick="toggleDropdown('aboutDropdown')" class="hover:text-green-500 focus:outline-none text-lg">
-                        About
-                    </button>
-                    <div id="aboutDropdown" class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">About</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Project Gallery</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Reviews</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Streamline Tips & Tricks</a>
-                    </div>
-                </div>
-                <div class="relative group">
-                    <button onclick="toggleDropdown('contactDropdown')" class="hover:text-green-500 focus:outline-none text-lg">
-                        Contact
-                    </button>
-                    <div id="contactDropdown" class="absolute hidden group-hover:block bg-white text-gray-900 mt-2 rounded shadow-lg">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Contact</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Fort Worth Service Area</a>
-                    </div>
-                </div>
+    <!-- Main Navigation -->
+    <div class="bg-gray-900 bg-opacity-70 text-white sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <img src="./img/logo2.png" alt="Logo" class="h-10">
+          
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-button" class="md:hidden text-white">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#" class="hover:text-green-700 transition">Home</a>
+            
+            <!-- Landscaping Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-green-700 transition">
+                Landscaping
+                <span class="ml-1">▼</span>
+              </button>
+              <div class="absolute hidden group-hover:block w-64 bg-white text-gray-900 mt-2 rounded-lg shadow-xl">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Landscaping Services</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Landscape Design</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Lawn Care Services</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Landscape Lighting</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Fence Installation</a>
+              </div>
             </div>
 
-            <!-- Call Button for Desktop -->
-            <button class="hidden md:block bg-green-700 text-white px-4 py-2 rounded-full font-bold text-white">Call (817)701-8920</button>
+            <!-- Drainage Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-green-700 transition">
+                Drainage
+                <span class="ml-1">▼</span>
+              </button>
+              <div class="absolute hidden group-hover:block w-64 bg-white text-gray-900 mt-2 rounded-lg shadow-xl">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Drain Services</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">French Drain Installation</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Channel Drain Installation</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Yard Drainage System</a>
+              </div>
+            </div>
+
+            <!-- Sprinkler Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-green-700 transition">
+                Sprinkler & Irrigation
+                <span class="ml-1">▼</span>
+              </button>
+              <div class="absolute hidden group-hover:block w-64 bg-white text-gray-900 mt-2 rounded-lg shadow-xl">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sprinkler & Irrigation Services</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sprinkler System Installation</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Sprinkler Repair</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Commercial Sprinkler Repair</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Drip Irrigation Installation</a>
+              </div>
+            </div>
+
+            <!-- About Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-green-700 transition">
+                About
+                <span class="ml-1">▼</span>
+              </button>
+              <div class="absolute hidden group-hover:block w-64 bg-white text-gray-900 mt-2 rounded-lg shadow-xl">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Project Gallery</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Reviews</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tips & Tricks</a>
+              </div>
+            </div>
+
+            <!-- Contact Dropdown -->
+            <div class="relative group">
+              <button class="hover:text-green-700 transition">
+                Contact
+                <span class="ml-1">▼</span>
+              </button>
+              <div class="absolute hidden group-hover:block w-64 bg-white text-gray-900 mt-2 rounded-lg shadow-xl">
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact Us</a>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Fort Worth Service Area</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Call Button -->
+          <button class="hidden md:block bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition">
+            Call (817) 701-8920
+          </button>
         </div>
 
         <!-- Mobile Menu -->
-        
-        <div id="mobileMenu" class="md:hidden hidden flex-col space-y-2 mt-2 bg-gray-800 text-white p-4 rounded">
-            <a href="#" class="hover:text-green-500">Home</a>
+        <div id="mobile-menu" class="hidden md:hidden py-4">
+          <div class="flex flex-col space-y-4">
+            <a href="#" class="text-white hover:text-green-700">Home</a>
+            
+            <!-- Mobile Dropdowns -->
+            <div class="space-y-2">
+              <button class="mobile-dropdown-trigger w-full text-left text-white hover:text-green-500" data-target="landscaping-mobile">
+                Landscaping ▼
+              </button>
+              <div id="landscaping-mobile" class="hidden pl-4 space-y-2">
+                <a href="#" class="block text-white hover:text-green-700">Landscaping Services</a>
+                <a href="#" class="block text-white hover:text-green-700">Landscape Design</a>
+                <a href="#" class="block text-white hover:text-green-700">Lawn Care Services</a>
+                <a href="#" class="block text-white hover:text-green-700">Landscape Lighting</a>
+                <a href="#" class="block text-white hover:text-green-700">Fence Installation</a>
+              </div>
+            </div>
 
-            <div class="relative">
+            <div class="space-y-2">
+              <button class="mobile-dropdown-trigger w-full text-left text-white hover:text-green-700" data-target="drainage-mobile">
+                Drainage ▼
+              </button>
+              <div id="drainage-mobile" class="hidden pl-4 space-y-2">
+                <a href="#" class="block text-white hover:text-green-700">Drain Services</a>
+                <a href="#" class="block text-white hover:text-green-700">French Drain Installation</a>
+                <a href="#" class="block text-white hover:text-green-700">Channel Drain Installation</a>
+                <a href="#" class="block text-white hover:text-green-700">Yard Drainage System</a>
+              </div>
+            </div>
 
-            <a href="#" onclick="toggleDropdown('landscapingDropdownMobile')" class="hover:text-green-500 text-black font-medium">Landscaping</a>
-                <div id="landscapingDropdownMobile" class="absolute right-60 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscaping Services</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscape Design</a>
-                    <a  href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Lawn Care Services</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Landscape Lighting</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Fence Installation</a>
-                </div>
+            <div class="space-y-2">
+              <button class="mobile-dropdown-trigger w-full text-left text-white hover:text-green-700" data-target="sprinkler-mobile">
+                Sprinkler & Irrigation ▼
+              </button>
+              <div id="sprinkler-mobile" class="hidden pl-4 space-y-2">
+                <a href="#" class="block text-white hover:text-green-700">Sprinkler & Irrigation Services</a>
+                <a href="#" class="block text-white hover:text-green-700">Sprinkler System Installation</a>
+                <a href="#" class="block text-white hover:text-green-700">Sprinkler Repair</a>
+                <a href="#" class="block text-white hover:text-green-700">Commercial Sprinkler Repair</a>
+                <a href="#" class="block text-white hover:text-green-700">Drip Irrigation Installation</a>
+              </div>
             </div>
-            <div class="relative">
-            <a href="#" onclick="toggleDropdown('drainageDropdownMobile')" class="hover:text-green-500 text-black font-medium">Drainage</a>
-                <div id="drainageDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Drain Services</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">French Drain Installation</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Channel Drain Installation</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Yard Drainage System</a>
-                </div>
+
+            <div class="space-y-2">
+              <button class="mobile-dropdown-trigger w-full text-left text-white hover:text-green-700" data-target="about-mobile">
+                About ▼
+              </button>
+              <div id="about-mobile" class="hidden pl-4 space-y-2">
+                <a href="#" class="block text-white hover:text-green-700">About Us</a>
+                <a href="#" class="block text-white hover:text-green-700">Project Gallery</a>
+                <a href="#" class="block text-white hover:text-green-700">Reviews</a>
+                <a href="#" class="block text-white hover:text-green-700">Tips & Tricks</a>
+              </div>
             </div>
-            <div class="relative">
-            <a href="#" onclick="toggleDropdown('sprinklerDropdownMobile')" class="hover:text-green-500 text-black font-medium">Sprinkler & Irrigation</a>
-            <div id="sprinklerDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler & Irrigation Services</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap"> Sprinkler System Installation</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Sprinkler Repair</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Commercial Sprinkler Repair</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Drip Irrigation Installation</a>
+
+            <div class="space-y-2">
+              <button class="mobile-dropdown-trigger w-full text-left text-white hover:text-green-700" data-target="contact-mobile">
+                Contact ▼
+              </button>
+              <div id="contact-mobile" class="hidden pl-4 space-y-2">
+                <a href="#" class="block text-white hover:text-green-700">Contact Us</a>
+                <a href="#" class="block text-white hover:text-green-700">Fort Worth Service Area</a>
+              </div>
             </div>
+
+            <!-- Mobile Call Button -->
+            <button class="bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition w-full">
+              Call (817) 701-8920
+            </button>
+          </div>
         </div>
-        <div class="relative">
-            <a href="#" onclick="toggleDropdown('aboutDropdownMobile')" class="hover:text-green-500 text-black font-medium">About</a>
-            <div id="aboutDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">About</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Project Gallery</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Reviews</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Streamline Tips & Tricks</a>
-            </div>
-        </div>
-        <div class="relative">
-            <a href="#" onclick="toggleDropdown('contactDropdownMobile')" class="hover:text-green-500 text-black font-medium">Contact</a>
-            <div id="contactDropdownMobile" class="absolute right-40 top-0 hidden group-hover:block bg-#1f2937 text-black mt-2 ml-2 p-2 rounded shadow-lg">
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Contact</a>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-200 whitespace-nowrap">Fort Worth Service Area</a>
-            </div>
-        </div>
-        <!-- Contact Button -->
-    <button class="bg-green-700 text-white px-4 py-2 rounded-full font-bold text-white mt-4">
-        Call (817)701-8920
-    </button>
-    </div>
-    </nav>    
 
-    <section class="built-differently-section">
-        <div class="overlay"></div>
-        
-        <div class="content">
-            <!-- Text Section -->
-            <div class="text-section">
-                <img src="icon.png" alt="Logo Icon" class="logo-icon">
-                <h1 class="title">Built Differently</h1>
-                <hr class="separator">
-                <p class="subtitle"> A <span class="highlight" id="highlight-text">Streamlined</span> Approach To Your <br> Outdoor Needs</p>
-                <button class="cta-button">Schedule An On-Site Assessment</button>
+    
+    <script type="module" src="/main.js"></script>
+
+    <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat">
+        <div class="absolute  "></div>
+
+        <!-- Content Container -->
+        <div class="relative min-h-screen flex items-center justify-center  bg-center mt-10 md:mt-16 px-2 ">
+            <!-- Left Content Section -->
+            <div class="flex-1 p-8 text-white">
+                <i data-lucide="sprout" class="w-12 h-12 mb-6 text-white"></i>
+                <img src="./img/icon.png" alt="Logo Icon" class="ml-6 w-10 h-10 mb-4">
+                <h1 class="text-5xl font-bold mb-4">Built Differently</h1>
+                <hr class="border-gray-400 w-full max-w-xl my-6">
+                <p class="text-4xl font-semibold font-serif mb-8">
+                  A <span class="cycling-word text-green-600 inline-block">Streamlined</span> Approach To Your Outdoor Needs
+              </p>
+                <button class="px-8 py-3 text-lg font-serif text-emerald-900 bg-white hover:bg-green-800 hover:text-white rounded-full transition-colors duration-300">
+                    Schedule An On-Site Assessment
+                </button>
             </div>
 
-            <!-- Form Section -->
-            <div class="form-section">
-                <form class="contact-form">
-                    <div class="form-row">
-                        <input type="text" placeholder="Name" class="form-input">
+            <!-- Right Form Section -->
+            <div class="flex-1 rounded-lg p-8 shadow-2xl">
+                <form class="space-y-6">
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Name"
+                            class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300"
+                        >
                     </div>
-                    <div class="form-row">
-                        <input type="text" placeholder="Phone" class="form-input">
-                        <input type="email" placeholder="Email" class="form-input">     
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input
+                            type="tel"
+                            placeholder="Phone"
+                            class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300"
+                        >
+                        <input
+                            type="email"
+                            placeholder="Email"
+                            class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300"
+                        >
                     </div>
-                    
-                    <input type="text" placeholder="Address" class="form-input">
-                    <select class="form-select">
+                    <input
+                        type="text"
+                        placeholder="Address"
+                        class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300"
+                    >
+                    <select class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300">
                         <option>Yes, I'm a potential new customer</option>
                         <option>No, I'm an existing customer</option>
                         <option>Neither</option>
                     </select>
-                    <select class="form-select">
+                    <select class="w-full px-4 py-3 rounded-full border border-gray-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 outline-none transition-all duration-300">
                         <option>Sprinklers</option>
                         <option>Drainage</option>
                         <option>Landscaping</option>
                         <option>Hardscaping</option>
                         <option>Other</option>
                     </select>
-                    <button type="submit" class="submit-button">Get In Touch Today</button>
+                    <button
+                        type="submit"
+                        class="w-full px-6 py-3 text-white bg-emerald-600 hover:bg-green-800 rounded-full font-bold transition-colors duration-300"
+                    >
+                        Get In Touch Today
+                    </button>
                 </form>
             </div>
         </div>
-    </section>
-    <!-- JavaScript for only for Mobile Menu -->
-    <script>
-        function toggleDropdown(dropdownId) {
-        const dropdown = document.getElementById(dropdownId);
-        dropdown.classList.toggle("hidden");
-        }
-        function toggleMobileMenu(dropdownId) {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('hidden');
-    }
+        <!-- Zigzag Border -->
+        <div class="absolute bottom-0 left-0 right-0">
+          <svg class="w-full h-4 fill-white" viewBox="0 0 200 40" preserveAspectRatio="none">
+            <path d="M0 40 L2.5 0 L5 40 L7.5 0 L10 40 L12.5 0 L15 40 L17.5 0 L20 40 L22.5 0 L25 40 L27.5 0 L30 40 L32.5 0 L35 40 L37.5 0 L40 40 L42.5 0 L45 40 L47.5 0 L50 40 L52.5 0 L55 40 L57.5 0 L60 40 L62.5 0 L65 40 L67.5 0 L70 40 L72.5 0 L75 40 L77.5 0 L80 40 L82.5 0 L85 40 L87.5 0 L90 40 L92.5 0 L95 40 L97.5 0 L100 40 L102.5 0 L105 40 L107.5 0 L110 40 L112.5 0 L115 40 L117.5 0 L120 40 L122.5 0 L125 40 L127.5 0 L130 40 L132.5 0 L135 40 L137.5 0 L140 40 L142.5 0 L145 40 L147.5 0 L150 40 L152.5 0 L155 40 L157.5 0 L160 40 L162.5 0 L165 40 L167.5 0 L170 40 L172.5 0 L175 40 L177.5 0 L180 40 L182.5 0 L185 40 L187.5 0 L190 40 L192.5 0 L195 40 L197.5 0 L200 40 L200 40 L0 40 Z" />
+          </svg>
+        </div> 
+      </div>
+  </section>
 
-    document.addEventListener('click', function(event) {
-        const dropdowns = [
-            'landscapingDropdownMobile', 'drainageDropdownMobile', 
-            'sprinklerDropdownMobile', 'aboutDropdownMobile', 'contactDropdownMobile'
-        ];
+  <section class="bg-white py-10 relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="relative flex items-center space-x-4">
+  
+        <!-- Left navigation button -->
+        <button class="text-emerald-600 text-3xl hover:text-green-800" id="scrollLeft">
+          &lt;
+        </button>
+  
+        <!-- Scrollable container for services -->
+        <div class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide" id="serviceContainer">
+          <!-- Sprinklers -->
+          <div class="text-center p-6 mt-4 snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 border-l border-r border-gray-300">
+            <div class="mb-4 flex justify-center">
+              <i data-lucide="droplets" class="w-16 text-emerald-600"></i>
+            </div>
+            <img src="./img/sprinkler.png" class="mb-2 w-1/4 mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Sprinklers</h3>
+            <p class="text-gray-600 mb-6">Design, Preparation, Materials & Installation</p>
+            <button class="px-6 py-2 text-emerald-600 border-2 border-emerald-600 rounded-full hover:bg-green-800 hover:text-white transition-colors duration-300">
+              Learn More
+            </button>
+          </div>
+  
+          <!-- Drainage -->
+          <div class="text-center p-6 mt-4 snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 border-l border-r border-gray-300">
+            <div class="mb-4 flex justify-center">
+              <i data-lucide="droplets" class="w-16 text-emerald-600"></i>
+            </div>
+            <img src="./img/drainage.png" class="mb-2 w-1/4 mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Drainage</h3>
+            <p class="text-gray-600 mb-6">Drains, Sump Pumps, Yard Drainage Systems, & Grates</p>
+            <button class="px-6 py-2 text-emerald-600 border-2 border-emerald-600 rounded-full hover:bg-green-800 hover:text-white transition-colors duration-300">
+              Learn More
+            </button>
+          </div>
+  
+          <!-- Landscaping -->
+          <div class="text-center p-6 mt-4 snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 border-l border-r border-gray-300">
+            <div class="mb-4 flex justify-center">
+              <i data-lucide="droplets" class="w-16 text-emerald-600"></i>
+            </div>
+            <img src="./img/landscaping.png" class="mb-2 w-1/4 mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Landscaping</h3>
+            <p class="text-gray-600 mb-6">Development, Installation, Maintenance & Enhancement</p>
+            <button class="px-6 py-2 text-emerald-600 border-2 border-emerald-600 rounded-full hover:bg-green-800 hover:text-white transition-colors duration-300">
+              Learn More
+            </button>
+          </div>
+  
+          <!-- Hardscaping -->
+          <div class="text-center p-6 mt-4 snap-start flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 border-l border-r border-gray-300">
+            <div class="mb-4 flex justify-center">
+              <i data-lucide="droplets" class="w-16 text-emerald-600"></i>
+            </div>
+            <img src="./img/hardscaping.png" class="mb-2 w-1/4 mx-auto">
+            <h3 class="text-2xl font-bold mb-4">Hardscaping</h3>
+            <p class="text-gray-600 mb-6">Patios, Pavers, Porticos, Specialty Concrete & Fencing</p>
+            <button class="px-6 py-2 text-emerald-600 border-2 border-emerald-600 rounded-full hover:bg-green-800 hover:text-white transition-colors duration-300">
+              Learn More
+            </button>
+          </div>
+        </div>
+  
+        <!-- Right navigation button -->
+        <button class="text-emerald-600 text-3xl hover:text-green-800" id="scrollRight">
+          &gt;
+        </button>
+      </div>
+    </div>
+    <hr class="border-gray-300 w-4/5 mx-auto my-12 ">
+    <div>
+      <h2 class="text-center text-green-700 hover:text-green-800 text-5xl">We Handle Everything For You!</h2>
+      <hr class="border-gray-300 w-4/5 mx-auto my-12 ">
+    </div>
+  </section>
+ 
 
-        dropdowns.forEach(id => {
-            const dropdown = document.getElementById(id);
-            const toggleButton = document.querySelector(`[onclick="toggleDropdown('${id}')"]`);
+  
 
-            if (dropdown && !dropdown.classList.contains('hidden') &&
-                !dropdown.contains(event.target) && event.target !== toggleButton) {
-                dropdown.classList.add('hidden');
-            }
-        });
-    });
-    const words = ['Streamlined', 'Professional', 'Long-Lasting'];
-let index = 0;
-
-function changeText() {
-    const highlight = document.getElementById('highlight-text');
-    highlight.style.opacity = 0;
-
-    setTimeout(() => {
-        highlight.textContent = words[index];
-        highlight.style.opacity = 1;
-        index = (index + 1) % words.length;
-    }, 500); 
-}
-// Change the text every 3 seconds
-setInterval(changeText, 1500);
-
-
-</script>
-    
-</body>
+    <!-- Main Content -->
+  </nav>
+  </body>
 </html>
